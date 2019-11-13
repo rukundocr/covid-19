@@ -2,7 +2,11 @@
   <div class="customers container ">
     <alert v-if="alert" v-bind:message = "alert"/>
  <h1 class="page-header text-primary" >Manage Customers</h1>
+ <div>
+   <label>Search customers</label>
  <input class="form-control" placeholder="Enter Last Name" v-model="filterInput">
+ </div>
+ 
     <br />
    <table class="table table-striped">
         <thead> 

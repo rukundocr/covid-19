@@ -41,16 +41,16 @@ new Vue({
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand " href="#">MENV STACK::VCustomer Manager </a>
+          <a class="navbar-brand " href="#"> MENV STACK::VCustomer Manager </a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li><router-link to="/">Home</router-link></li>
-            <li><router-link to="/about">About</router-link></li>
+            <li><router-link to="/"> <i class="fa fa-home fa-2x" aria-hidden="true"></i> Home</router-link></li>
+            <li><router-link to="/about"><i class="fa fa-address-book fa-2x" aria-hidden="true"></i>  About</router-link></li>
             
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><router-link to="/add">Add Customer</router-link></li>
+            <li><router-link to="/add"> <i class="fa fa-pencil fa-2x" aria-hidden="true"></i> Add Customer</router-link></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
