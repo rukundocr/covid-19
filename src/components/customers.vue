@@ -1,9 +1,9 @@
 <template>
   <div class="customers container ">
     <alert v-if="alert" v-bind:message = "alert"/>
- <h1 class="page-header text-primary" >Manage Customers</h1>
+ <h1 class="page-header text-primary" >Manage Customers<span class="badge" style="float:right" >Total Customers:{{ size }}</span></h1>
  <div>
-   <label>Search customers</label>
+   <label class="text-primary">Search</label>
  <input class="form-control" placeholder="Enter Last Name" v-model="filterInput">
  </div>
  
@@ -11,7 +11,7 @@
    <table class="table table-striped">
         <thead> 
           <tr>
-            <th class="text-primary"><i class="fa fa-user fa-2x" aria-hidden="true"></i> NO</th>
+            <th class="text-primary">NO</th>
             <th class="text-primary"><i class="fa fa-user fa-2x" aria-hidden="true"></i> First Name</th>
             <th class="text-primary"><i class="fa fa-user fa-2x" aria-hidden="true"></i> Last Name</th>
             <th class="text-primary"><i class="fa fa-envelope-square fa-2x" aria-hidden="true"></i> Email</th>
@@ -23,9 +23,8 @@
         </thead>
         <tbody>
           <tr v-for= "(customer,index) in filterBy(customers,filterInput)" v-bind:key="customer._id">
-            <td> {{ index }} </td>
+            <td> {{ index +1 }} </td>
               <td> {{ customer.firstname }} </td>
-               <td> {{ customer.firstname }} </td>
                 <td> {{ customer.lastname }} </td>
                  <td> {{ customer.email }} </td>
                   <td> {{ customer.phone }} </td>
@@ -33,6 +32,8 @@
                 <td> {{ customer.city }} </td>
                  <td> {{ customer.state }} </td>
                   <td> <router-link class="btn btn-primary" v-bind:to="'/customer/'+ customer._id">View</router-link></td>
+                  <td> <router-link class="btn btn-primary" v-bind:to="'/edit/'+ customer._id">UPDATE</router-link></td>
+                 
             </tr>
         </tbody>
     </table>
@@ -49,7 +50,7 @@ export default {
       customers:[],
       alert : '',
       filterInput:'',
-     
+      size:'',
     }
   },
   methods:{
@@ -57,11 +58,16 @@ export default {
       this.$http.get('http://localhost:3000/employee/')
       .then(function(response){
         this.customers = (response.body)
-
+        this.size= this.customers.length;
       });
     },
-
     
+    deletecustomer(_id){
+ this.$http.delete('http://localhost:3000/employee/'+_id)
+          .then(function(response){
+           this.$router.push({path:'/',query:{alert:"Customer Deleted Successfully"}});
+          });
+},
     filterBy(list,value){
       value = value.charAt(0).toUpperCase() + value.slice(1);
       return list.filter(function(customer){
@@ -75,7 +81,6 @@ export default {
         this.alert = this.$route.query.alert;
       }
       this.fetchCustomers();
-     
   },
  // updated:function(){
      // this.fetchCustomers();
@@ -89,5 +94,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
 
 </style>
