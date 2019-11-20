@@ -11,17 +11,20 @@
    <table class="table table-striped">
         <thead> 
           <tr>
-            <th class="text-primary">First Name</th>
-            <th class="text-primary">Last Name</th>
-            <th class="text-primary">Email</th>
-            <th class="text-primary">Phone</th>
-             <th class="text-primary">Adresss</th>
-            <th class="text-primary">City</th>
-            <th class="text-primary">State</th>
+            <th class="text-primary"><i class="fa fa-user fa-2x" aria-hidden="true"></i> NO</th>
+            <th class="text-primary"><i class="fa fa-user fa-2x" aria-hidden="true"></i> First Name</th>
+            <th class="text-primary"><i class="fa fa-user fa-2x" aria-hidden="true"></i> Last Name</th>
+            <th class="text-primary"><i class="fa fa-envelope-square fa-2x" aria-hidden="true"></i> Email</th>
+            <th class="text-primary"><i class="fa fa-phone fa-2x" aria-hidden="true"></i> Phone</th>
+             <th class="text-primary"><i class="fa fa-book fa-2x" aria-hidden="true"></i> Adresss</th>
+            <th class="text-primary"><i class="fa fa-building fa-2x" aria-hidden="true"></i> City</th>
+            <th class="text-primary"> <i class="fa fa-flag fa-2x" aria-hidden="true"></i> State</th>
           </tr>
         </thead>
         <tbody>
-          <tr v-for= "customer in filterBy(customers,filterInput)" v-bind:key="customer._id">
+          <tr v-for= "(customer,index) in filterBy(customers,filterInput)" v-bind:key="customer._id">
+            <td> {{ index }} </td>
+              <td> {{ customer.firstname }} </td>
                <td> {{ customer.firstname }} </td>
                 <td> {{ customer.lastname }} </td>
                  <td> {{ customer.email }} </td>
@@ -37,6 +40,7 @@
 </template>
 
 <script>
+
 import alert from "./alert";
 export default {
   name: 'customers',
@@ -44,7 +48,8 @@ export default {
     return {
       customers:[],
       alert : '',
-      filterInput:''
+      filterInput:'',
+     
     }
   },
   methods:{
@@ -55,6 +60,7 @@ export default {
 
       });
     },
+
     
     filterBy(list,value){
       value = value.charAt(0).toUpperCase() + value.slice(1);
@@ -69,6 +75,7 @@ export default {
         this.alert = this.$route.query.alert;
       }
       this.fetchCustomers();
+     
   },
  // updated:function(){
      // this.fetchCustomers();

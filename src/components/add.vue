@@ -2,7 +2,7 @@
   <div class="add container">
       <router-link to="/">BACK</router-link>
       <alert v-if="alert" v-bind:message="alert"/>
-   <h1 class="pahe-header text-primary">ADD CUSTOMER</h1>
+   <h1 class="pahe-header text-primary"><i class="fa fa-user fa-2x" aria-hidden="true"></i> ADD CUSTOMER</h1>
    <form v-on:submit="addCustomer">
         <div class="well">
             <h4 class="text-primary">Customer Info</h4>
