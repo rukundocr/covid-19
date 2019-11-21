@@ -93,7 +93,7 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style >
 .bg-1 {
     background-color: #1abc9c; /* Green */
     color: #ffffff;
@@ -110,5 +110,8 @@ export default {
     width: 200px;
 
   }
+ body{
+   width:80%;
+ }
 
 </style>
