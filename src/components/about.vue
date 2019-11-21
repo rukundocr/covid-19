@@ -6,8 +6,8 @@
    <h2 class="text-danger">Backend is Built With nodejs,Express and Mongodb hosted on heroku </h2>
    <p class="text-primary">Author: RUKUNDO Jean Cluade</p>
     <p class="text-primary">Version : 1.0.0</p>
-    <p>Git repo for forntend <a href="https://github.com/rukundocr/Vmanager">frontend</a><br/>
-    <p>Git repo for backend  <a href="https://github.com/rukundocr/nodemongo_API">backend</a><br />
+    <p>Git repo for forntend <a href="https://github.com/rukundocr/Vmanager" target="blank">frontend</a><br/>
+    <p>Git repo for backend  <a href="https://github.com/rukundocr/nodemongo_API" target="blank">backend</a><br />
     
   <div class="container-fluid bg-1 text-center">
   <h3>Who Am I?</h3>
