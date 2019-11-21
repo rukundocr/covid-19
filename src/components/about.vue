@@ -12,9 +12,7 @@
   <div class="container-fluid bg-1 text-center">
   <h3>Who Am I?</h3>
   <img src="../assets/claude.jpg" class="img-circle" alt="Bird">
-  <h3>I'm an a Serious Web Developper</h3>
-   <img src="../assets/claude.jpg" class="img-circle" alt="Bird">
-  <h3>I'm an a Serious Web Developper</h3>
+  <h3>I'm a Web Developper</h3>
 </div>
 
 <div class="container-fluid bg-2 text-center">
