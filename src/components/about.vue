@@ -21,7 +21,8 @@
 
 <div class="container-fluid bg-3 text-center">
   <h3>Where To Find Me?</h3>
-  <p>rukundocr@gmail.com</p>
+  <p class="text-primary"><i class="fa fa-envelope-square fa-2x" aria-hidden="true"></i> rukundocr@gmail.com</p>
+  <p class="text-primary"><i class="fa fa-phone fa-2x" aria-hidden="true"></i>+250783289997</p>
 </div>
 </div>
 </template>
