@@ -1,10 +1,10 @@
 <template>
   <div class="about container">
     <router-link to="/">BACK</router-link>
-   <h1 class="pahe-header">ABOUT</h1>
-   <p>This is a Customer Manager app created with Vuejs Framework </p>
-   <p>Author: RUKUNDO Jean Cluade</p>
-    <p>Version : 1.0.0</p>
+   <h1 class="page-header text-primary" >ABOUT</h1>
+   <h2 class="text-danger">This is a Customer Manager app created with Vuejs Framework </h2>
+   <p class="text-primary">Author: RUKUNDO Jean Cluade</p>
+    <p class="text-primary">Version : 1.0.0</p>
  
   <div class="container-fluid bg-1 text-center">
   <h3>Who Am I?</h3>
