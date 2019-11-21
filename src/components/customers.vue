@@ -31,7 +31,7 @@
                   <td> {{ customer.address }} </td>
                 <td> {{ customer.city }} </td>
                  <td> {{ customer.state }} </td>
-                  <td> <router-link class="btn btn-primary" v-bind:to="'/customer/'+ customer._id">View</router-link></td>
+                  <td> <router-link class="btn btn-primary" v-bind:to="'/customer/'+ customer._id">Details</router-link></td>
                   <td> <router-link class="btn btn-primary" v-bind:to="'/edit/'+ customer._id">UPDATE</router-link></td>
                  
             </tr>
