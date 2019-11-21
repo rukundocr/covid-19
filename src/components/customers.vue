@@ -110,8 +110,6 @@ export default {
     width: 200px;
 
   }
- body{
-   width:80%;
- }
+ 
 
 </style>
