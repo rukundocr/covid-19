@@ -29,13 +29,13 @@ export default {
   },
     methods:{
       fetchCustomer(id){
-          this.$http.get('http://localhost:3000/employee/'+id)
+          this.$http.get('https://vcustomer.herokuapp.com/employee/'+id)
           .then(function(response){
             this.customer = response.body;
           });
 },
 deletecustomer(_id){
- this.$http.delete('http://localhost:3000/employee/'+_id)
+ this.$http.delete('https://vcustomer.herokuapp.com/employee/'+_id)
           .then(function(response){
            this.$router.push({path:'/',query:{alert:"Customer Deleted Successfully"}});
           });

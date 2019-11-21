@@ -59,7 +59,7 @@ export default {
   },
   methods:{
       fetchCustomer(id){
-          this.$http.get('http://localhost:3000/employee/'+id)
+          this.$http.get('https://vcustomer.herokuapp.com/employee/'+id)
           .then(function(response){
             this.customer = response.body;
           });
@@ -80,7 +80,7 @@ export default {
               city:this.customer.city,
               state:this.customer.state
           }
-          this.$http.put('http://localhost:3000/edit/'+this.$route.params.id,UpdateCustomer)
+          this.$http.put('https://vcustomer.herokuapp.com/edit/'+this.$route.params.id,UpdateCustomer)
           .then(function(response){
               this.$router.push({path:'/',query:{alert:"Customer Updated Successfully"}});
           });

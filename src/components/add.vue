@@ -73,7 +73,7 @@ export default {
               city:this.customer.city,
               state:this.customer.state
           }
-          this.$http.post('http://localhost:3000/employee',newcustomer)
+          this.$http.post('https://vcustomer.herokuapp.com/employee',newcustomer)
           .then(function(response){
               this.$router.push({path:'/',query:{alert:"Customer added Successfully"}});
           });

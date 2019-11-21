@@ -55,7 +55,7 @@ export default {
   },
   methods:{
     fetchCustomers(){
-      this.$http.get('http://localhost:3000/employee/')
+      this.$http.get('https://vcustomer.herokuapp.com/employee/')
       .then(function(response){
         this.customers = (response.body)
         this.size= this.customers.length;
@@ -63,7 +63,7 @@ export default {
     },
     
     deletecustomer(_id){
- this.$http.delete('http://localhost:3000/employee/'+_id)
+ this.$http.delete('https://vcustomer.herokuapp.com/employee/'+_id)
           .then(function(response){
            this.$router.push({path:'/',query:{alert:"Customer Deleted Successfully"}});
           });
