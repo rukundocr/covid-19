@@ -10,6 +10,7 @@ import about from './components/about'
 import add from './components/add'
 import customerdetail from "./components/customerdetail"
 import edit from './components/edit'
+import sensordata from './components/sensordata'
 
 Vue.use(VueResouce)
 Vue.use(VueRouter)
@@ -23,6 +24,7 @@ const router = new VueRouter({
     {path:'/add',component:add},
     {path:'/customer/:id',component:customerdetail,props:true},
     {path:'/edit/:id',component:edit,props:true},
+    {path:'/sensordata',component:sensordata},
   ]
 })
 Vue.config.productionTip = false
@@ -41,12 +43,13 @@ new Vue({
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand text-primary " href="#"> MENV STACK::VCustomer Manager </a>
+          <a class="navbar-brand text-primary " href="#"> MENV STACK::SMART IRRIGATION </a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li><router-link to="/"> <i class="fa fa-home fa-2x" aria-hidden="true"></i> Home</router-link></li>
             <li><router-link to="/about"><i class="fa fa-address-book fa-2x" aria-hidden="true"></i>  About</router-link></li>
+            <li><router-link to="/sensordata"><i class="fa fa-address-book fa-2x" aria-hidden="true"></i>SENSOR DATA</router-link></li>
             
           </ul>
           <ul class="nav navbar-nav navbar-right">
