@@ -17,6 +17,7 @@
             <th class="text-primary"> TEMPERATURE</th>
             <th class="text-primary"> HUMIDITY</th>
             <th class="text-primary"> PUMP STATUS</th>
+            <th class="text-primary"> UPDATED</th>
           </tr>
         </thead>
         <tbody>
@@ -26,7 +27,7 @@
                 <td> {{ customer.temp}} </td>
                  <td> {{ customer.humidity }} </td>
                   <td> {{ customer.pump_status }} </td>
-                 
+                 <td> {{ customer.updated }} </td>
             </tr>
         </tbody>
     </table>
@@ -44,6 +45,7 @@ export default {
       alert : '',
       filterInput:'',
       size:'',
+      time:''
     }
   },
   methods:{
