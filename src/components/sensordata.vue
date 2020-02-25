@@ -38,19 +38,18 @@
 
 import alert from "./alert";
 export default {
-  name: 'sensordata',
+  name: 'customers',
   data () {
     return {
       customers:[],
       alert : '',
       filterInput:'',
       size:'',
-      time:''
     }
   },
   methods:{
     fetchCustomers(){
-      this.$http.get('https://vcustomer.herokuapp.com/employee/')
+      this.$http.get('https://vsmagri.herokuapp.com/getall/')
       .then(function(response){
         this.customers = (response.body)
         this.size= this.customers.length;
@@ -66,7 +65,7 @@ export default {
     filterBy(list,value){
       value = value.charAt(0).toUpperCase() + value.slice(1);
       return list.filter(function(customer){
-        return customer.moisture.indexOf(value) > -1;
+        return customer.lastname.indexOf(value) > -1;
       })
     }
     
@@ -84,6 +83,7 @@ export default {
     alert
   }
 }
+
 
 </script>
 
