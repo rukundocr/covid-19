@@ -50,7 +50,7 @@ export default {
   },
   methods:{
     fetchCustomers(){
-      this.$http.get('https://vcustomer.herokuapp.com/getall/')
+      this.$http.get('https://vsmagri.herokuapp.com/getall/')
       .then(function(response){
         this.customers = (response.body)
         this.size= this.customers.length;
