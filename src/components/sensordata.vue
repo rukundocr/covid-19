@@ -38,7 +38,7 @@
 
 import alert from "./alert";
 export default {
-  name: 'customers',
+  name: 'sensordata',
   data () {
     return {
       customers:[],
