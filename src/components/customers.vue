@@ -57,7 +57,7 @@ export default {
     fetchCustomers(){
       this.$http.get('https://vcustomer.herokuapp.com/employee/')
       .then(function(response){
-        this.customers = (response.body)
+        this.customers = (response.body);
         this.size= this.customers.length;
       });
     },

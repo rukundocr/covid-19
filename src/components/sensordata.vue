@@ -12,22 +12,30 @@
    <table class="table table-striped">
         <thead> 
           <tr>
-            <th class="text-primary">NO</th>
-            <th class="text-primary"> MOISTURE</th>
-            <th class="text-primary"> TEMPERATURE</th>
-            <th class="text-primary"> HUMIDITY</th>
-            <th class="text-primary"> PUMP STATUS</th>
-            <th class="text-primary"> UPDATED</th>
+            
+            <th class="text-primary"> COUNTRY</th>
+            <th class="text-primary"> CASES</th>
+            <th class="text-primary"> Today cASES</th>
+            <th class="text-primary"> DEATHS</th>
+            <th class="text-primary"> TODAY DEATHS</th>
+            <th class="text-primary"> RECOVERED</th>
+            <th class="text-primary"> ACTIVE CASES</th>
+            <th class="text-primary"> CRITICAL</th>
+            <th class="text-primary"> CASES PER ONE MILLION</th>
           </tr>
         </thead>
         <tbody>
-          <tr v-for= "(customer,index) in filterBy(customers,filterInput)" v-bind:key="customer._id">
-            <td> {{ index +1 }} </td>
-              <td> {{ customer.moisture }} </td>
-                <td> {{ customer.temp}} </td>
-                 <td> {{ customer.humidity }} </td>
-                  <td> {{ customer.pump_status }} </td>
-                 <td> {{ customer.updated }} </td>
+          <tr v-for= "customer in customers" v-bind:key="customer.country">
+          
+              <td> {{ customer.country }} </td>
+                <td> {{ customer.cases}} </td>
+                 <td> {{ customer.todaycases }} </td>
+                  <td> {{ customer.deaths }} </td>
+                 <td> {{ customer.todayDeaths }} </td>
+                 <td> {{ customer.recovered}} </td>
+                 <td> {{ customer.active}} </td>
+                  <td> {{ customer.critical }} </td>
+                 <td> {{ customer.casesPerOneMillion }} </td>
             </tr>
         </tbody>
     </table>
@@ -45,17 +53,23 @@ export default {
       alert : '',
       filterInput:'',
       size:'',
-      time:''
+      time:'',
+    
     }
   },
   methods:{
     fetchCustomers(){
-      this.$http.get('https://vsmagri.herokuapp.com/getall/')
+      this.$http.get('https://coronavirus-19-api.herokuapp.com/countries/')
       .then(function(response){
-        this.customers = (response.body)
-        this.size= this.customers.length;
+        console.log(response.body)
+        response.body.forEach((user)=>{
+        this.customers = user;
+         console.log(this.customers);
+        })
+        
       });
     },
+    
     
     deletecustomer(_id){
  this.$http.delete('https://vcustomer.herokuapp.com/employee/'+_id)
@@ -63,12 +77,6 @@ export default {
            this.$router.push({path:'/',query:{alert:"Customer Deleted Successfully"}});
           });
 },
-    filterBy(list,value){
-      value = value.charAt(0).toUpperCase() + value.slice(1);
-      return list.filter(function(customer){
-        return customer.moisture.indexOf(value) > -1;
-      })
-    }
     
     },
     created:function(){

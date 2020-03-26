@@ -11,6 +11,7 @@ import add from './components/add'
 import customerdetail from "./components/customerdetail"
 import edit from './components/edit'
 import sensordata from './components/sensordata'
+import district from './components/district'
 
 Vue.use(VueResouce)
 Vue.use(VueRouter)
@@ -19,17 +20,31 @@ const router = new VueRouter({
   mode:"history",
   base:__dirname,
   routes:[
-    {path:'/',component:customers},
-    {path:'/about',component:about},
-    {path:'/add',component:add},
+    {path:'/', name:'home',component:district},
+    {path:'/about',name:"about",component:about},
+    {path:'/add',name:"add",component:add},
     {path:'/customer/:id',component:customerdetail,props:true},
     {path:'/edit/:id',component:edit,props:true},
-    {path:'/sensordata',component:sensordata},
+    {path:'/sensordata',name:"sensordata",component:sensordata},
+    {path:'/district',name:"district",component:district},
   ]
 })
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
+router.beforeResolve((to, from, next) => {
+  // If this isn't an initial page load.
+  if (to.name) {
+      // Start the route progress bar.
+      NProgress.start()
+  }
+  next()
+})
+
+router.afterEach((to, from) => {
+  // Complete the animation of the route progress bar.
+  NProgress.done()
+})
 new Vue({
   router,
   template: `
@@ -43,17 +58,14 @@ new Vue({
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand text-primary " href="#"> MENV STACK::SMART IRRIGATION </a>
+          <a class="navbar-brand text-primary " href="#"> COVID-19 TRACKING  APP</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li><router-link to="/"> <i class="fa fa-home fa-2x" aria-hidden="true"></i> Home</router-link></li>
+            <li><router-link to="/district"> <i class="fa fa-home fa-2x" aria-hidden="true"></i> Home</router-link></li>
             <li><router-link to="/about"><i class="fa fa-address-book fa-2x" aria-hidden="true"></i>  About</router-link></li>
-            <li><router-link to="/sensordata"><i class="fa fa-address-book fa-2x" aria-hidden="true"></i>SENSOR DATA</router-link></li>
+          
             
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li><router-link to="/add"> <i class="fa fa-pencil fa-2x" aria-hidden="true"></i> Add Customer</router-link></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
