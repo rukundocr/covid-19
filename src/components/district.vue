@@ -248,13 +248,15 @@
 
 <div class="container-fluid bg-2 text-center">
   <h3>What Am I?</h3>
-  <p>I Actually a web developper with a passion of creating my own products</p>
+   <p>I am Actually a Full Stack Javascript frameworks developper || Nodejs|| Expressa MongoDB for Backend </p>
+  <p> Vuejs for frontend  </p>
 </div>
 
 <div class="container-fluid bg-3 text-center">
   <h3>Where To Find Me?</h3>
   <p class="text-primary"><i class="fa fa-envelope-square fa-2x" aria-hidden="true"></i> rukundocr@gmail.com</p>
   <p class="text-primary"><i class="fa fa-phone fa-2x" aria-hidden="true"></i>+250783289997</p>
+  <p class="text-primary"><i class="fa fa-pencil fa-2x" aria-hidden="true"></i>IPRC NGOMA </p>
 </div>
   </div>
  
