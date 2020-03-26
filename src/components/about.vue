@@ -2,9 +2,9 @@
   <div class="about container">
     <router-link to="/">BACK</router-link>
    <h1 class="page-header text-primary" >ABOUT</h1>
-   <h2 class="text-danger">This is a Covid-19 tracker  app created with Vuejs Framework </h2>
-   <h2 class="text-danger"> I am Using External API to get real time update for new covid19 cases from WHO </h2>
-   <h2 class="text-danger">Backend is Built With nodejs,Express and Mongodb hosted on heroku </h2>
+   <h2 class="text-success">This is a Covid-19 tracker  app created with Vuejs Framework </h2>
+   <h2 class="text-success"> I am Using External API to get real time update for new covid19 cases from WHO </h2>
+   <h2 class="text-success">Backend is Built With nodejs,Express and Mongodb hosted on heroku </h2>
    <p class="text-primary">Author: RUKUNDO Jean Cluade</p>
     <p class="text-primary">Version : 1.0.0</p>
     <p>Git repo for forntend <a href="https://github.com/rukundocr/covid-19.git" target="_blank">frontend</a><br/>
