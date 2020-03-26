@@ -2,7 +2,7 @@
 
   <div class="add container">
     <hr>
-    <h1 class="text-success">GLOBAL COVID-19 OUTBREAK STATISTICS</h1>
+    <h1 class="text-success">GLOBAL COVID-19 OUTBREAK REAL TIME STATISTICS</h1>
     <h3 class="text-warning">POSITVE CASES: <span class="badge badge-dark text-danger ">{{global.cases}} </span></h3>
     <h3 class="text-warning">TOTAL DEATHS: <span class="badge badge-danger">{{global.deaths}} </span></h3>
     <h3 class="text-warning">RECOVERED: <span class="badge badge-warning">{{global.recovered}} </span></h3>
