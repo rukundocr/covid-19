@@ -13,6 +13,7 @@
        <h3> Positive Cases: <span class="badge badge-primary">{{corona.cases}} </span> </h3>
        <h3> Deaths: <span class="badge badge-primary"> {{corona.deaths}}</span></h3>
       <h3> Recovered: <span class="badge badge-primary"> {{corona.recovered}}</span></h3>
+      <h3> Today's Cases: <span class="badge badge-primary"> {{corona.todayCases}}</span></h3>
        <h1 class="page-header text-danger">{{error}}</h1>
     <form v-on:submit="search" id="district">
     <label>SELECT COUNTRY</label>
@@ -255,8 +256,8 @@
 
 <div class="container-fluid bg-3 text-center">
   <h3>Where To Find Me?</h3>
-  <p class="text-primary"><i class="fa fa-envelope-square fa-2x" aria-hidden="true"></i> rukundocr@gmail.com</p>
-  <p class="text-primary"><i class="fa fa-phone fa-2x" aria-hidden="true"></i>+250783289997</p>
+  <p class="text-primary"><i class="fa fa-envelope-square fa-2x" aria-hidden="true"></i><span> <a href="mailto:rukundocr@gmail.com">rukundocr@gmail.com</a></span></p>
+  <p class="text-primary"><i class="fa fa-phone fa-2x" aria-hidden="true"></i><span> <a href="tel:0783289997">+250783289997 </a></span></p>
   <p class="text-primary"><i class="fa fa-pencil fa-2x" aria-hidden="true"></i>IPRC NGOMA </p>
 </div>
   </div>
