@@ -230,11 +230,8 @@
  </form>
  <br>
   <ul class="list-group">
-            <li class="list-group-item text-primary">Positive Cases: <span class="badge badge-primary">{{corona.cases}}</span></li>
-            <li class="list-group-item text-primary">Today's Cases <span class="badge badge-primary">{{corona.todayCases}}</span></li>
-            <li class="list-group-item text-primary">Deaths: <span class="badge badge-primary">{{corona.deaths}}</span></li>
+            
             <li class="list-group-item text-primary">Doday Deaths: <span class="badge badge-primary">{{corona.todayDeaths}}</span></li>
-            <li class="list-group-item text-primary">Recovered: <span class="badge badge-primary">{{corona.recovered}}</span></li>
            
             <li class="list-group-item text-primary">Active Cases: <span class="badge badge-primary">{{corona.active}}</span></li>
             <li class="list-group-item text-primary">Critical Cases: <span class="badge badge-primary">{{corona.critical}}</span></li>
