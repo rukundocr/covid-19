@@ -6,12 +6,13 @@
     <h3 class="text-warning">POSITVE CASES: <span class="badge badge-dark text-danger ">{{global.cases}} </span></h3>
     <h3 class="text-warning">TOTAL DEATHS: <span class="badge badge-danger">{{global.deaths}} </span></h3>
     <h3 class="text-warning">RECOVERED: <span class="badge badge-warning">{{global.recovered}} </span></h3>
-    
-      <h3 class="text-primary">Search by Country . Select Any Country to see current update  </h3>
-      <h1 class="page-header text-success">Country:{{corona.country}}  ::: 
-        Positive Cases: <span class="badge badge-primary">{{corona.cases}}
-          </span> Deaths: <span class="badge badge-primary">
-            {{corona.deaths}}</span></h1> 
+       <hr>
+      <h3 class="text-danger">Search by Country . Select Any Country to see current update  </h3>
+      <hr>
+      <h3 class="page-header text-success">Country:{{corona.country}} </h3>
+       <h3> Positive Cases: <span class="badge badge-primary">{{corona.cases}} </span> </h3>
+       <h3> Deaths: <span class="badge badge-primary"> {{corona.deaths}}</span></h3>
+      <h3> Recovered: <span class="badge badge-primary"> {{corona.recovered}}</span></h3>
        <h1 class="page-header text-danger">{{error}}</h1>
     <form v-on:submit="search" id="district">
     <label>SELECT COUNTRY</label>
