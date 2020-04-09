@@ -12,6 +12,13 @@ import customerdetail from "./components/customerdetail"
 import edit from './components/edit'
 import sensordata from './components/sensordata'
 import district from './components/district'
+import VueProgressBar from 'vue-progressbar'
+
+Vue.use(VueProgressBar, {
+  color: "magenta",
+  failedColor: 'red',
+  height: '20px'
+})
 
 Vue.use(VueResouce)
 Vue.use(VueRouter)
@@ -71,6 +78,8 @@ new Vue({
       </div>
     </nav>
     <router-view></router-view>
+        <!-- set progressbar -->
+        <vue-progress-bar></vue-progress-bar>
   </div>
   
   `

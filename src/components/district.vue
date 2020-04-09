@@ -1,22 +1,38 @@
 <template>
 
+
   <div class="add container">
-    <hr>
-    <h1 class="text-success">GLOBAL COVID-19 OUTBREAK REAL TIME STATISTICS</h1>
-    <h3 class="text-warning">POSITVE CASES: <span class="badge badge-dark text-danger ">{{global.cases}} </span></h3>
-    <h3 class="text-warning">TOTAL DEATHS: <span class="badge badge-danger">{{global.deaths}} </span></h3>
-    <h3 class="text-warning">RECOVERED: <span class="badge badge-warning">{{global.recovered}} </span></h3>
-       <hr>
-      <h3 class="text-danger">Search by Country . Select Any Country to see current update  </h3>
+    <router-view></router-view>
+        <!-- set progressbar -->
+        <vue-progress-bar></vue-progress-bar>
+
+            <h3 class="text-success">GLOBAL COVID-19 OUTBREAK REAL TIME STATISTICS</h3>
+           <ul class="list-group">
+            
+            <li class="list-group-item text-primary ">Positive Case: <span class="badge  active">{{global.cases}}</span></li>
+           
+            <li class="list-group-item text-primary">Total Deaths: <span class="badge badge-primary">{{global.deaths}}</span></li>
+            <li class="list-group-item text-primary">Recovered: <span class="badge badge-primary">{{global.recovered}}</span></li>
+        </ul>
+      <h3 class="text-danger">Search by Country   </h3>
       <hr>
-      <h3 class="page-header text-success">Country:{{corona.country}} </h3>
-       <h3> Positive Cases: <span class="badge badge-primary">{{corona.cases}} </span> </h3>
-       <h3> Deaths: <span class="badge badge-primary"> {{corona.deaths}}</span></h3>
-      <h3> Recovered: <span class="badge badge-primary"> {{corona.recovered}}</span></h3>
-      <h3> Today's Cases: <span class="badge badge-primary"> {{corona.todayCases}}</span></h3>
-       <h1 class="page-header text-danger">{{error}}</h1>
+    
+  <div class="card" style="width: 18rem;">
+  <div class="card-header">
+    Country :<span class="text-primary"> {{corona.country}}</span>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item text-primary">Positive Cases<span class="badge badge-primary">{{corona.cases}} </span></li>
+    <li class="list-group-item text-primary">Deaths<span class="badge badge-primary">{{corona.deaths}} </span></li>
+    <li class="list-group-item text-primary">Recovered<span class="badge badge-primary">{{corona.recovered}} </span></li>
+    <li class="list-group-item text-primary">Today's Cases<span class="badge badge-primary">{{corona.todayCases}} </span></li>
+  </ul>
+</div>
+
+
+
+  <label>SELECT COUNTRY</label>
     <form v-on:submit="search" id="district">
-    <label>SELECT COUNTRY</label>
    <select v-model="selected" class="form-control" placeholder="select a country">
    <option value="Afghanistan">Afghanistan</option>
    <option value="Albania">Albania</option>
@@ -283,8 +299,10 @@ export default {
   methods:{
   //-----------------------
   countries(){
+    this.$Progress.start()
       axios.get('https://coronavirus-19-api.herokuapp.com/all')
       .then(response =>{
+          this.$Progress.finish()
         this.global = response.data
         console.log(response.data)
       })
@@ -293,13 +311,16 @@ export default {
       let newsearch = {
         selected:this.selected
       }
+       this.$Progress.start()
       axios.get('https://coronavirus-19-api.herokuapp.com/countries/'+ newsearch.selected)
           .then((response)=>{
+            this.$Progress.finish()
            // console.log(response.data)
             this.corona = response.data
             
           })
           .catch((error)=>{
+            this.$Progress.fail()
             if(error.response){
             this.error = (error.response.data);}
           })
