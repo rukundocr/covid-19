@@ -57,7 +57,7 @@
           <div class="col-12 col-md-12">
          
   <div class="container-fluid  text-center">
-    <h3 class="dark">Author: Rukundo Jean Claude </h3>
+    <h3 class="dark">Developper: Rukundo Jean Claude </h3>
   <img src="../assets/claude.jpg" class="img-circle img-fluid "  alt="Bird">
   <h3>I'm a Web Developper</h3>
 </div>
