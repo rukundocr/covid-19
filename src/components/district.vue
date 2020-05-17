@@ -20,7 +20,8 @@
           </div>
           <div class="col-12 col-md-6" >
         <div>
-     <label>SELECT COUNTRY TO SEE CURRENT DATA</label>
+          <br>
+     <label class="text-success">Search Data by Country </label>
     <form v-on:submit="search" id="district">
    <select v-model="selected" class="form-control" >
    <option v-for="country in countries"  v-bind:key="country.id"> {{country}} </option>
