@@ -42,7 +42,7 @@
     <li class="list-group-item text-primary">Recovered<span class="badge badge-success">{{corona.recovered}} </span></li>
     <li class="list-group-item text-primary">Today's Cases<span class="badge badge-primary">{{corona.todayCases}} </span></li>
      
-            <li class="list-group-item text-primary">Doday Deaths: <span class="badge badge-primary">{{corona.todayDeaths}}</span></li>
+            <li class="list-group-item text-primary">Doday Deaths: <span class="badge badge-danger">{{corona.todayDeaths}}</span></li>
            
             <li class="list-group-item text-primary">Active Cases: <span class="badge badge-primary">{{corona.active}}</span></li>
             <li class="list-group-item text-primary">Critical Cases: <span class="badge badge-danger">{{corona.critical}}</span></li>
