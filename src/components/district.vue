@@ -52,18 +52,18 @@
 </div>
           </div>
         </div>
-               
+              <br> 
     <div class="row">
           <div class="col-12 col-md-12">
          
-  <div class="container-fluid bg-1 text-center">
-    <h3 class="text-success">Author: Rukundo Jean Claude </h3>
+  <div class="container-fluid  text-center">
+    <h3 class="dark">Author: Rukundo Jean Claude </h3>
   <img src="../assets/claude.jpg" class="img-circle img-fluid "  alt="Bird">
   <h3>I'm a Web Developper</h3>
 </div>
 
 <div class="container-fluid bg-2 text-center">
-   <p class="text-primary">I am Actually a Full Stack Javascript frameworks developper || Nodejs|| Expressa MongoDB for Backend </p>
+   <p>I am Actually a Full Stack Javascript frameworks developper || Nodejs|| Expressa MongoDB for Backend </p>
   <p> Vuejs for frontend  </p>
 </div>
 
