@@ -22,6 +22,7 @@
         <div>
           <br>
      <label class="text-success">Search Data by Country </label>
+		 <h5  v-if="available" class="text-warning">Country Data not Found </h5>
     <form v-on:submit="search" id="district">
    <select v-model="selected" class="form-control" >
    <option v-for="country in countries"  v-bind:key="country.id"> {{country}} </option>
@@ -32,8 +33,8 @@
 
  </form>
         </div>
- 
-      <div class="card" v-show="toggle">
+      
+      <div class="card" v-show="toggle && !available">
     <div class="card-header">
     Country :<span class="badge badge-primary"> {{corona.country}}</span>
   </div>
@@ -76,8 +77,7 @@
   </div>
    </div>
   </div>
-      </div>
-           
+      </div>   
  
 </template>
 
@@ -88,7 +88,8 @@ export default {
   data () {
     return {
       selected:{},
-      corona :{},
+			corona :{},
+			available:false,
       error:'',
       global:{},
       toggle:false,
@@ -368,9 +369,17 @@ export default {
       axios.get('https://coronavirus-19-api.herokuapp.com/countries/'+ newsearch.selected)
           .then((response)=>{
             this.$Progress.finish()
-           // console.log(response.data)
-            this.corona = response.data
-            this.toggle=true;
+						console.log(response.data)
+						if(response.data === "Country not found"){
+						//	console.log('ready to go');
+						this.available = true;
+						}
+						else{
+            this.corona = response.data;
+						this.toggle=true;
+						this.available = false;
+						}
+          
             
           })
           .catch((error)=>{
