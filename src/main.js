@@ -11,7 +11,7 @@ import add from './components/add'
 import customerdetail from "./components/customerdetail"
 import edit from './components/edit'
 import sensordata from './components/sensordata'
-import district from './components/district'
+import covid from './components/covid'
 import VueProgressBar from 'vue-progressbar'
 
 Vue.use(VueProgressBar, {
@@ -27,13 +27,13 @@ const router = new VueRouter({
   mode:"history",
   base:__dirname,
   routes:[
-    {path:'/', name:'home',component:district},
+    {path:'/', name:'home',component:covid},
     {path:'/about',name:"about",component:about},
     {path:'/add',name:"add",component:add},
     {path:'/customer/:id',component:customerdetail,props:true},
     {path:'/edit/:id',component:edit,props:true},
     {path:'/sensordata',name:"sensordata",component:sensordata},
-    {path:'/district',name:"district",component:district},
+    {path:'/covid',name:"covid",component:covid},
   ]
 })
 Vue.config.productionTip = false
@@ -56,31 +56,23 @@ new Vue({
   router,
   template: `
   <div id= 'app'>
-  <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"  aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand text-primary " href="#"> COVID-19 TRACKING  APP</a>
-        </div>
-        <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li><router-link to="/district"> <i class="fa fa-home fa-2x" aria-hidden="true"></i> Home</router-link></li>
-            <li><router-link to="/about"><i class="fa fa-address-book fa-2x" aria-hidden="true"></i>  About</router-link></li>
-          
-            
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
-    <router-view></router-view>
-        <!-- set progressbar -->
-        <vue-progress-bar></vue-progress-bar>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Global Covid Tracker</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+    <li class="nav-item"><router-link to="/covid"> <i class="fa fa-home fa-2x" aria-hidden="true"></i> Home</router-link></li><br>
+    <li nav-item><router-link to="/about"><i class="fa fa-address-book fa-2x" aria-hidden="true"></i>  About</router-link></li>
+     
+    </ul>
   </div>
-  
+</nav>
+<router-view></router-view>
+    <!-- set progressbar -->
+    <vue-progress-bar></vue-progress-bar>
+</div>
+<br>
   `
 }).$mount('#app')

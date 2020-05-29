@@ -84,7 +84,7 @@
 <script>
 import axios from "axios"
 export default {
-  name: 'district',
+  name: 'covid',
   data () {
     return {
       selected:{},
